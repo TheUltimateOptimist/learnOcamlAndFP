@@ -1,0 +1,102 @@
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Runner: processes
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Chooser: simple
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration suite_name = "test suite for sum"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration cache_filename = "/home/theultimateoptimist/3110/_build/oUnit-$(suite_name).cache"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration run_gc_full_major = "true"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration display = "true"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration results_style_1_X = "false"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration testdata_dir = "none"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration health_check_interval = "1."
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration verbose = "false"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration chooser = "simple"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration output_html_dir = "none"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration processes_kill_period = "5."
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration runner = "processes"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration shards = "8"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration processes_grace_period = "5."
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration log_encoding = "utf-8"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration output_junit_file = "none"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration ci = "false"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Configuration output_file = "/home/theultimateoptimist/3110/_build/oUnit-$(suite_name)-$(shard_id).log"
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Using 8 workers maximum.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Starting worker number DESKTOP-641AIF3#01.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#01 started.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Starting worker number DESKTOP-641AIF3#02.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#02 started.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Starting worker number DESKTOP-641AIF3#03.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#03 started.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 3 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 3 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 I: Start test test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 3 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 3 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 E: Test test suite for sum:0:empty has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 E: expected: 0 but got: 1 in test test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 I: Start test test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 3 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 3 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#01 I: End test test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 3 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 3 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton, test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 E: Test test suite for sum:1:singleton has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 E: expected: 1 but got: 2 in test test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 2 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 2 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#02 I: End test test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 I: Start test test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 2 tests running : test suite for sum:2:two_elements, test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 2 tests running: test suite for sum:2:two_elements, test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 1 tests running : test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 1 tests running: test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 E: Test test suite for sum:2:two_elements has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 E: expected: 3 but got: 4 in test test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 1 tests running : test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 1 tests running: test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#03 I: End test test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Still 1 tests running : test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 1 tests running: test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: 0 tests running: .
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#01 has ended.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#02 has ended.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Worker DESKTOP-641AIF3#03 has ended.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Used 3 worker during test execution.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Run 1 tests with shard DESKTOP-641AIF3#03.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Run 1 tests with shard DESKTOP-641AIF3#01.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Run 1 tests with shard DESKTOP-641AIF3#02.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Check health of shard DESKTOP-641AIF3#03, 1 times.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Check health of shard DESKTOP-641AIF3#01, 6 times.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Check health of shard DESKTOP-641AIF3#02, 4 times.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: ==============
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Summary:
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Test test suite for sum:2:two_elements has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: expected: 3 but got: 4 in test test suite for sum:2:two_elements.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Test test suite for sum:1:singleton has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: expected: 1 but got: 2 in test test suite for sum:1:singleton.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Test test suite for sum:0:empty has failed.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: expected: 0 but got: 1 in test test suite for sum:0:empty.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Raised at OUnitAssert.assert_failure in file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: Called from OUnitRunner.run_one_test.(fun) in file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 E: 
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Ran: 3 tests in: 0.10 seconds.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Cases: 3.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Tried: 3.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Errors: 0.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Failures: 3.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Skip: 0.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Todo: 0.
+2023-02-17T20:43:38+00:00 DESKTOP-641AIF3#00 I: Timeout: 0.
