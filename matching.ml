@@ -10,7 +10,7 @@ let rec sum lst =
 let rec length lst =
   match lst with
   | [] -> 0
-  | h :: t -> 1 + length t
+  | _ :: t -> 1 + length t
 
 let inc_first lst =
   match lst with
