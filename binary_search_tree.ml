@@ -70,12 +70,30 @@ let rec _get(node : ('key, 'value) node option)(key: 'key) : 'value option =
 
 let rec get(bst : ('key, 'value) bst)(key: 'key) = _get bst.root key
 
+let rec _min (node: ('key, 'value) node) = 
+  match node.left with 
+    | None -> node
+    | Some node -> _min node
+
+let min (bst : ('key, 'value) bst) = 
+  match bst.root with
+    | None -> None
+    | Some node -> Some (_min node).key
+
+let rec _max (node: ('key, 'value) node) = 
+  match node.right with 
+    | None -> node
+    | Some node -> _max node
+
+let max (bst : ('key, 'value) bst) = 
+  match bst.root with
+    | None -> None
+    | Some node -> Some (_max node).key
+
 let has_key (bst : ('key, 'value) bst)(key: 'key) = 
   match get bst key with
     | None -> false
     | Some _ -> true
-
-
 
 let size (bst : ('key, 'value) bst) = 
   match bst.root with
@@ -125,7 +143,7 @@ let keys_inorder_inefficient(bst : ('key, 'value) bst) =
     | Some node -> [node.key] @ (keys_inorder node.left) @ (keys_inorder node.right) in
   keys_inorder bst.root
 
-let put key value (bst : ('key, 'value) bst) = 
+let put (bst : ('key, 'value) bst) key value = 
   let rec _put key value = function
     | None -> empty_node key value
     | Some node -> 
@@ -135,6 +153,36 @@ let put key value (bst : ('key, 'value) bst) =
         | _ -> {node with value = value} in
       {new_node with size = 1 + size {root=new_node.left} + size {root=new_node.right}} in
   {root = Some (_put key value bst.root)}
+
+let rec _remove_min (node: ('key, 'value) node) = 
+  match node.left with
+    | None -> node.right
+    | Some _node ->
+      let new_node = {node with left = _remove_min _node} in 
+      Some {new_node with size = 1 + size {root=new_node.left} + size {root=new_node.right}}
+
+let remove_min (bst : ('key, 'value) bst) = 
+  match bst.root with
+   | None -> bst
+   | Some node -> {root=_remove_min node}
+
+let rec _remove_max (node: ('key, 'value) node) = 
+ match node.right with
+   | None -> node.left
+   | Some _node ->
+     let new_node = {node with right = _remove_max _node} in 
+     Some {new_node with size = 1 + size {root=new_node.left} + size {root=new_node.right}}
+
+let remove_max (bst : ('key, 'value) bst) = 
+ match bst.root with
+  | None -> bst
+  | Some node -> {root=_remove_max node}
+
+(* hibbard deletion
+let remove (bst : ('key, 'value) bst) key =  *)
+
+
+
   
 
 
