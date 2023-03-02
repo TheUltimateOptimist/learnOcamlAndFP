@@ -67,11 +67,15 @@ let has_key (bst : ('key, 'value) bst)(key: 'key) =
     | None -> false
     | Some _ -> true
 
+
+
 let size (bst : ('key, 'value) bst) = 
   match bst.root with
     | None -> 0
     | Some node -> node.size
 
+
+let is_empty(bst : ('key, 'value) bst) = size bst == 0
 
 (*the cons opeator has const time complexity, thus the following function is O(n)*)
 let keys_inorder(bst : ('key, 'value) bst) = 
