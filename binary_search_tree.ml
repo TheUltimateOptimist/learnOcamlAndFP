@@ -10,6 +10,14 @@ type ('key, 'value) bst = {
   root : ('key, 'value) node option;
 }
 
+let empty_node key value = {
+  key=key;
+  value=value;
+  left=None;
+  right=None;
+  size=1;
+}
+
 let empty_bst() : ('key, 'value) bst = {
   root=None
 }
@@ -116,6 +124,18 @@ let keys_inorder_inefficient(bst : ('key, 'value) bst) =
     | None -> []
     | Some node -> [node.key] @ (keys_inorder node.left) @ (keys_inorder node.right) in
   keys_inorder bst.root
+
+let put key value (bst : ('key, 'value) bst) = 
+  let rec _put key value = function
+    | None -> empty_node key value
+    | Some node -> 
+      let new_node = match node.key with
+        | _key when _key > key -> _put key value node.left
+        | _key when _key < key -> _put key value node.right
+        | _ -> {node with value = value} in
+      {new_node with size = 1 + size {root=new_node.left} + size {root=new_node.right}} in
+  {root = Some (_put key value bst.root)}
+  
 
 
 
