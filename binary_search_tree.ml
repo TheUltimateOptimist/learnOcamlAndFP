@@ -130,8 +130,8 @@ let put key value (bst : ('key, 'value) bst) =
     | None -> empty_node key value
     | Some node -> 
       let new_node = match node.key with
-        | _key when _key > key -> _put key value node.left
-        | _key when _key < key -> _put key value node.right
+        | _key when _key > key -> {node with left = Some (_put key value node.left)}
+        | _key when _key < key -> {node with right = Some (_put key value node.right)}
         | _ -> {node with value = value} in
       {new_node with size = 1 + size {root=new_node.left} + size {root=new_node.right}} in
   {root = Some (_put key value bst.root)}
