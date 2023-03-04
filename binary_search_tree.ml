@@ -1,57 +1,35 @@
+let red = true
+let black = false
+
 type ('key, 'value) node = {
   key : 'key;
   value: 'value;
   left: ('key, 'value) node option;
   right: ('key, 'value) node option;
   size: int;
+  color: bool
 }
+
+let _is_red (node: ('key, 'value) node option) = 
+  match node with 
+    | None -> false
+    | Some node -> node.color = red
 
 type ('key, 'value) bst = {
   root : ('key, 'value) node option;
 }
 
-let empty_node key value = {
+let empty_node key value color = {
   key=key;
   value=value;
   left=None;
   right=None;
   size=1;
+  color=color;
 }
 
 let empty_bst() : ('key, 'value) bst = {
   root=None
-}
-
-let treeOne = {
-  root=Some{
-    key=10;
-    value=4;
-    left=None;
-    right=None;
-    size=1;
-  }
-}
-
-let treeTwo = {
-  root=Some{
-    key=10;
-    value=4;
-    left=Some{
-      key=5;
-      value=5;
-      left=None;
-      right=None;
-      size=1;
-    };
-    right=Some{
-      key=15;
-      value=15;
-      left=None;
-      right=None;
-      size=1;
-    };
-    size=3;
-  }
 }
 
 let rec _get(node : ('key, 'value) node option)(key: 'key) : 'value option =
@@ -143,9 +121,28 @@ let keys_inorder_inefficient(bst : ('key, 'value) bst) =
     | Some node -> [node.key] @ (keys_inorder node.left) @ (keys_inorder node.right) in
   keys_inorder bst.root
 
+let _rotate_left (node: ('key, 'value) node) = 
+  match node.right with
+    | Some right when _is_red (Some right) -> {right with left = Some {node with right = right.left; color=red}; color = node.color}
+    | _ -> failwith "invalid branch"
+
+let _rotate_right (node: ('key, 'value) node) =
+  match node.left with
+    | Some left when _is_red (Some left) -> {left with right = Some {node with left = left.right; color = red}; color = node.color}
+    | _ -> failwith "invalid branch"
+
+let _flip_colors (node: ('key, 'value) node) =
+  match node.left, node.right with
+    | Some left, Some right when not (_is_red (Some node)) && (_is_red (Some left)) && (_is_red (Some right)) -> 
+      let new_left = {left with color = black} in 
+      let new_right = {right with color = black} in 
+      {node with color = red; left = Some new_left; right = Some new_right}
+    | _ -> failwith "invalid branch"
+
+
 let put (bst : ('key, 'value) bst) key value = 
   let rec _put key value = function
-    | None -> empty_node key value
+    | None -> empty_node key value red
     | Some node -> 
       let new_node = match node.key with
         | _key when _key > key -> {node with left = Some (_put key value node.left)}
@@ -193,12 +190,3 @@ let remove (bst : ('key, 'value) bst) key =
           | _ -> failwith "impossible branch" in
         Some {new_node with size = 1 + size({root=new_node.left}) + size({root=new_node.right})} in
   {root = _remove bst.root key}
-
-
-
-
-
-  
-
-
-
