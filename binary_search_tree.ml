@@ -71,14 +71,14 @@ let rec _get(node : ('key, 'value) node option)(key: 'key) : 'value option =
 let rec get(bst : ('key, 'value) bst)(key: 'key) = _get bst.root key
 
 let rec _min (node: ('key, 'value) node) = 
-  match node.left with 
+  match node.left with
     | None -> node
-    | Some node -> _min node
+    | Some node -> _min (node)
 
 let min (bst : ('key, 'value) bst) = 
   match bst.root with
     | None -> None
-    | Some node -> Some (_min node).key
+    | Some node -> (_min node).key
 
 let rec _max (node: ('key, 'value) node) = 
   match node.right with 
@@ -178,8 +178,23 @@ let remove_max (bst : ('key, 'value) bst) =
   | None -> bst
   | Some node -> {root=_remove_max node}
 
-(* hibbard deletion
-let remove (bst : ('key, 'value) bst) key =  *)
+(*hibbard deletion*)
+let remove (bst : ('key, 'value) bst) key = 
+  let rec _remove (node: ('key, 'value) node option) key = 
+    match node with
+      | None -> None (*node is none return none*)
+      | Some {key=_key;value = _;right = None;left = _left;size = _} when _key = key -> _left (*node key matches key and right Node is None -> return left Node*)
+      | Some {key=_key;value = _;right = _right;left = None;size = _} when _key = key -> _right (*node key matches key and left Node is None -> return right Node*)
+      | Some node -> 
+        let new_node = match node.key, node.right with
+          | _key, _ when key < _key -> {node with left = _remove node.left key} (*key is smaller than key of node -> go left*)
+          | _key, _ when key > _key -> {node with right = _remove node.right key} (*key is greater than key of node -> go right*)
+          | _, Some right -> {(_min right) with right = (_remove_min right); left = node.left} (*key is equal to key of node and left and right child are not None*)
+          | _ -> failwith "impossible branch" in
+        Some {new_node with size = 1 + size({root=new_node.left}) + size({root=new_node.right})} in
+  {root = _remove bst.root key}
+
+
 
 
 
